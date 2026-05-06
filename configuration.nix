@@ -180,25 +180,28 @@
   environment.systemPackages = with pkgs; [
     brave                           # Browser
     rclone                          # Backup
-    # anydesk                         # Remote desktop
+    anydesk                         # Remote desktop
     ddcutil                         # Backlight control
-    localsend                       # File share
+    # localsend                       # File share
     easyeffects                     # Equaliser and other
-    # qbittorrent                     # Download manager
+    qbittorrent                     # Download manager
     git                             # Version control
     gparted                         # Editing disk partitions
-    efibootmgr                      # Editing nvram
+    # efibootmgr                      # Editing nvram
     # unzip                           # Z-Archives
     btop                            # Task manager
-    javaPackages.compiler.openjdk21 # Java
+    # javaPackages.compiler.openjdk21 # Java
     neovim                          # Code Editor
-    netbird                         # IP tunneling
+    # netbird                         # IP tunneling
     # obsidian                        # Best MD File Editor
     # persepolis                      # Downlaod Manager
     p7zip                           # zipping and unzipping tool
     gnome-extension-manager
     # ntfs3g
-    yt-dlp
+    # yt-dlp
+    # parsec-bin
+    exiftool
+    signal-desktop
 
     # GNOME
       nautilus
@@ -216,7 +219,6 @@
       gnomeExtensions.appindicator
 
     # GAMES & WINDOWS
-      heroic
       wineWow64Packages.staging # wine-staging (version with experimental features)
       winetricks # winetricks (all versions)
       wineWow64Packages.waylandFull # native wayland support (unstable)
@@ -235,7 +237,7 @@
     nerd-fonts.intone-mono
   ];
   
-  services.netbird.enable = true; # Latest version can be obtained using manual installation method given in docs. but it needs you to run "sudo netbird service run" manually or you can set this command itself to run on boot.
+  # services.netbird.enable = true;
 
   # Enable Flatpak
   services.flatpak.enable = true;
@@ -243,19 +245,21 @@
   services.flatpak.packages = [
     "org.telegram.desktop"
 
-    { # elyprismlauncher
+    "com.heroicgameslauncher.hgl"
+
+    /* { # elyprismlauncher
       flatpakref = "https://elyprismlauncher.github.io/flatpak/elyprismlauncher.flatpakref";
       sha256="b7c919c031d048cc01e2378909aa030e4737417008c5ab0ea29cab098b50b477";
-    }
+    } */
 
     "org.jdownloader.JDownloader"
 
-    "dev.lizardbyte.app.Sunshine"
+    # "dev.lizardbyte.app.Sunshine"
 
   ];
 
 
-  virtualisation.waydroid.enable = true;
+  # virtualisation.waydroid.enable = true;
   
   # Permanently enable EXPERIMENTAL support for flakes
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
