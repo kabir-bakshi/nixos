@@ -1,5 +1,5 @@
 {
-  description = "Lenovo m720q Flake for Kabir";
+  description = "Flake for locking package versions for Kabir";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -15,13 +15,16 @@
   };
 
   outputs = { nixpkgs, nix-flatpak, home-manager, ... } @ inputs: {
+
     nixosConfigurations = {
-      nixos = nixpkgs.lib.nixosSystem {
+      m720q = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
         specialArgs = { inherit inputs; };
         
         modules = [
+          ./modules # will import default modules
+
           ./configuration.nix
           
           nix-flatpak.nixosModules.nix-flatpak
