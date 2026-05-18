@@ -1,25 +1,25 @@
 {config, pkgs, ...}:
 {
-	imports = [ ./dconf.nix ];
+  imports = [ ./dconf.nix ];
 
-	home.username = "kabir";
-	home.homeDirectory = "/home/kabir";
+  home.username = "kabir";
+  home.homeDirectory = "/home/kabir";
 
-	programs = {
-		bash = {
-			enable = true;
-  			initExtra = ''
-				# export PATH=$PATH:/usr/bin 
-			    	# echo 󰥳 गं गणपतये नमः।
+  programs = {
+    bash = {
+      enable = true;
+        initExtra = ''
+        # export PATH=$PATH:/usr/bin 
+            # echo 󰥳 गं गणपतये नमः।
           
-          			fastfetch
+                fastfetch
 
-          			source ~/git-prompt.sh
-          			PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\n\[\e[2m\]╭── \[\e[1;3m\]\[\e[0m\] \[\e[1;2;3m\]\u\[\e[0m\]  \n\[\e[2m\]├── \[\e[1;3m\]\[\e[0m\] \[\e[1;2;3m\]\H\n\[\e[0;2m\]├── \[\e[1;3m\]\[\e[0m\] \[\e[1;2;3m\]\w\[\e[38;5;230m\]$PS1_CMD1\n\[\e[0;2m\]│\n│\n\[\e[0m\]\[\e[1;2m\]╰── 󰥳 \[\e[0m\]'
-      			'';
+                source ~/git-prompt.sh
+                PROMPT_COMMAND='PS1_CMD1=$(__git_ps1 " (%s)")'; PS1='\n\[\e[2m\]╭── \[\e[1;3m\]\[\e[0m\] \[\e[1;2;3m\]\u\[\e[0m\]  \n\[\e[2m\]├── \[\e[1;3m\]\[\e[0m\] \[\e[1;2;3m\]\H\n\[\e[0;2m\]├── \[\e[1;3m\]\[\e[0m\] \[\e[1;2;3m\]\w\[\e[38;5;230m\]$PS1_CMD1\n\[\e[0;2m\]│\n│\n\[\e[0m\]\[\e[1;2m\]╰── 󰥳 \[\e[0m\]'
+            '';
 
-			shellAliases = {
-				la="ls -al";
+      shellAliases = {
+        la="ls -al";
 
                                 crclone="sh ~/Documents/rclone\\ sync.sh";
 
@@ -30,9 +30,9 @@
                                 nfu="sudo nix flake update --flake /etc/nix-flake/ && nrs";
 
                                 smcs="cd ~/Games/Sync\\ Sewer; sh start.sh";
-			};
-		};
-	
+      };
+    };
+  
     fastfetch = {
       enable = true;
       settings = {
@@ -139,5 +139,5 @@
     };
   };
 
-	home.stateVersion = "25.11";
+  home.stateVersion = "25.11";
 }

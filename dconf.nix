@@ -86,12 +86,6 @@ with lib.hm.gvariant;
       sleep-inactive-ac-type = "nothing"; # Doesn't let gnome sleep on inactivity
     };
 
-    "org/gnome/shell" = {
-      disabled-extensions = [ "bluetooth-battery-monitor@v8v88v8v88.com" "dash-to-dock@micxgx.gmail.com" ];
-      enabled-extensions = [ "user-theme@gnome-shell-extensions.gcampax.github.com" "appindicatorsupport@rgcjonas.gmail.com" "emoji-selector@maestroschan.fr" "emoji-copy@felipeftn" "paperwm@paperwm.github.com" ];
-      favorite-apps = [ "brave-browser.desktop" "com.github.wwmm.easyeffects.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Terminal.desktop" "org.gnome.Settings.desktop" "org.gnome.Extensions.desktop" "com.heroicgameslauncher.hgl.desktop" "org.jdownloader.JDownloader.desktop" "org.telegram.desktop.desktop" ];
-    };
-
     "org/gnome/shell/extensions/dash-to-dock" = {
       apply-custom-theme = false;
       autohide = true;

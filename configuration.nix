@@ -3,7 +3,6 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, inputs, ... }:
-
 {
   imports = [
     # Include the results of the hardware scan.
@@ -30,11 +29,14 @@
       "udev.log_level=3"
       "systemd.show_status=auto"
     ];
-    
+
+    # extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback.out ];
+
     # Use latest kernel and add modules.
     kernelPackages = pkgs.linuxPackages_latest;
     
     # kernelModules = [ "kvm-intel" ]; # for virtualisation
+    # kernelModules = [ "v4l2loopback" ]; # Virtual Camera
 
     plymouth = {
       enable = true;
@@ -75,15 +77,12 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
-  i18n.inputMethod.enabled = "ibus";
-  # i18n.defaultLocale = "en_IN.UTF-8";
-
   i18n.extraLocaleSettings = {
     LC_ALL = "en_US.UTF-8"; # This overrides all other LC_* settings.
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
@@ -95,7 +94,6 @@
     substituters = [
       "https://nix-community.cachix.org"
     ];
-    
     trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
@@ -116,9 +114,11 @@
 
 
   # Configure keymap in X11
+  /*
   services.xserver.xkb = {
     layout = "us";
   };
+  */
 
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
@@ -180,7 +180,10 @@
   environment.systemPackages = with pkgs; [
     brave                           # Browser
     rclone                          # Backup
-    anydesk                         # Remote desktop
+      tree-sitter                     # Prerequisite for NVchad
+      ripgrep                         # same as above
+      unzip                           # Z-Archives
+    # anydesk                         # Remote desktop
     ddcutil                         # Backlight control
     # localsend                       # File share
     easyeffects                     # Equaliser and other
@@ -188,7 +191,6 @@
     git                             # Version control
     gparted                         # Editing disk partitions
     # efibootmgr                      # Editing nvram
-    # unzip                           # Z-Archives
     btop                            # Task manager
     # javaPackages.compiler.openjdk21 # Java
     neovim                          # Code Editor
@@ -202,6 +204,9 @@
     # parsec-bin
     exiftool
     signal-desktop
+    droidcam
+    # pavucontrol
+    gamemode
 
     # GNOME
       nautilus
@@ -227,6 +232,9 @@
     # Cosmetic
       bibata-cursors
       persepolis
+
+
+      steam-run
   ];
 
   fonts.packages = with pkgs; [
@@ -258,6 +266,14 @@
 
   ];
 
+  /*
+  services.sunshine = {
+    enable = true;
+    autoStart = true;  # optional: starts Sunshine automatically on login
+    capSysAdmin = true; 
+    openFirewall = true;
+  };
+  */
 
   # virtualisation.waydroid.enable = true;
   
