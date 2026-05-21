@@ -1,10 +1,9 @@
 {
   imports = [
-    # Essential
     ./essentials/boot.nix
     ./essentials/hardware_and_networking.nix
     ./essentials/time.nix
-    ./essentials/audio.nix
+    ./essentials/audio_pipewire.nix
     ./essentials/users_and_rules.nix
     ./essentials/enable_flakes.nix
 

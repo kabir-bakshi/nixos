@@ -3,6 +3,16 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    
+    /*
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+    import-tree.url = "github:vic/import-tree";
+
+    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
+    */
 
     nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
 
@@ -14,10 +24,10 @@
     stylix.url = "github:nix-community/stylix";
   };
 
-  outputs = { nixpkgs, nix-flatpak, home-manager, ... } @ inputs: {
-
+  outputs = inputs: {
+    # inputs.flake-parts.lib.mkFlake { inherit inputs; } ( inputs.import-tree ./modules ); # will import all modules recursively.
     nixosConfigurations = {
-      m720q = nixpkgs.lib.nixosSystem {
+      m720q = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
 
         specialArgs = { inherit inputs; };
@@ -25,19 +35,18 @@
         modules = [
           ./modules # will import default modules
 
-          ./configuration.nix
+          ./hosts/m720q/configuration.nix
           
-          nix-flatpak.nixosModules.nix-flatpak
+          inputs.nix-flatpak.nixosModules.nix-flatpak
           
-          home-manager.nixosModules.home-manager
-          {
+          inputs.home-manager.nixosModules.home-manager {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
               backupFileExtension = "nix_backup";
               
-              users.kabir = ./kabir_home.nix;
-              # users.krishna = ./krishna_home.nix;
+              users.kabir = ./user_modules/kabir/home.nix;
+              # users.krishna = ./user_modules/krishna/home.nix;
             };
           }
 

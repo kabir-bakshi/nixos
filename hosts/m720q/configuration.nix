@@ -1,19 +1,15 @@
-{ config, pkgs, inputs, ... }:
+{ inputs, ... }:
 {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./modules/desktop_environments/gnome.nix
+    ./../../modules/desktop_environments/gnome.nix
   ];
 
   networking.hostName = "m720q";
-
   nixpkgs.config.allowUnfree = true;
   
-
   # virtualisation.waydroid.enable = true;
-  
-
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
