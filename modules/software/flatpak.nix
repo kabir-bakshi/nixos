@@ -5,7 +5,7 @@
   services.flatpak.packages = [
     "org.telegram.desktop"
 
-    "com.heroicgameslauncher.hgl"
+    # "com.heroicgameslauncher.hgl"
 
     /* { # elyprismlauncher
       flatpakref = "https://elyprismlauncher.github.io/flatpak/elyprismlauncher.flatpakref";

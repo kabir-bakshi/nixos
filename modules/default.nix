@@ -6,6 +6,7 @@
     ./essentials/audio_pipewire.nix
     ./essentials/users_and_rules.nix
     ./essentials/enable_flakes.nix
+    # ./essentials/aria2.nix
 
     ./desktop_environments/stylix.nix
 

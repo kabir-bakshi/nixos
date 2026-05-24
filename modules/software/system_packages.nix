@@ -1,58 +1,58 @@
-{ pkgs, ... }:
-{
+{ pkgs, inputs, ... }: {
   environment.systemPackages = with pkgs; [
-    brave                           # Browser
-    rclone                          # Backup
-      tree-sitter                     # Prerequisite for NVchad
-      ripgrep                         # same as above
-      unzip                           # Z-Archives
-    # anydesk                         # Remote desktop
-    ddcutil                         # Backlight control
-    # localsend                       # File share
-    easyeffects                     # Equaliser and other
-    qbittorrent                     # Download manager
-    git                             # Version control
-    gparted                         # Editing disk partitions
-    # efibootmgr                      # Editing nvram
-    btop                            # Task manager
-    # javaPackages.compiler.openjdk21 # Java
-    neovim                          # Code Editor
-    p7zip                           # zipping and unzipping tool
-    gnome-extension-manager
-    # ntfs3g
-    # yt-dlp
-    # parsec-bin
-    exiftool
-    signal-desktop
-    droidcam
-    # pavucontrol
-    gamemode
+    # INTERNET
+      signal-desktop
+      brave
+      rclone
+      # localsend
+      # anydesk
+      # parsec-bin
+      motrix
 
-    # GNOME
-      nautilus
-      refine
-      eog
-      gnome-terminal
+    # AUDIO
+      easyeffects
+      # pavucontrol
 
-    # KDE
-      kdePackages.okular
 
-    # Extensions
-      gnomeExtensions.dash-to-dock
-      gnomeExtensions.paperwm
-      # gnomeExtensions.hide-top-bar # paperwm has it as a shortcut
-      gnomeExtensions.appindicator
+    # UTILITIES
+      ddcutil
+      git
+      btop
+      p7zip
+      exiftool
+      unrar
+      # droidcam
+
+    # DOWNLOAD
+      qbittorrent
+      inputs.agenix.packages."${system}".default
+      # yt-dlp
+
+    # BOOT & Disk
+      gparted
+      # efibootmgr
+      # ntfs3g
 
     # GAMES & WINDOWS
       wineWow64Packages.staging # wine-staging (version with experimental features)
       winetricks # winetricks (all versions)
       wineWow64Packages.waylandFull # native wayland support (unstable)
+      # javaPackages.compiler.openjdk21
       # parsec-bin
+      heroic
 
     # Cosmetic
       bibata-cursors
 
+    # NVchad
+      neovim
+      tree-sitter
+      ripgrep
+      unzip
+    
+    # Games
       steam-run
+      gamemode
   ];
 
   fonts.packages = with pkgs; [

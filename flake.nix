@@ -22,6 +22,11 @@
     };
     
     stylix.url = "github:nix-community/stylix";
+
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: {
@@ -51,6 +56,8 @@
           }
 
           inputs.stylix.nixosModules.stylix
+
+          inputs.agenix.nixosModules.default
         ];
       };
     };

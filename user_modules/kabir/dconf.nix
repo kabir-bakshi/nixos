@@ -120,7 +120,7 @@ with lib.hm.gvariant;
       selection-border-size = 0;
       vertical-margin = 0;
       vertical-margin-bottom = 0;
-      window-gap = 8;
+      window-gap = 12;
     };
 
     "org/gtk/settings/file-chooser" = {
