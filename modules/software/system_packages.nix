@@ -5,13 +5,17 @@
       brave
       rclone
       # localsend
-      # anydesk
+      anydesk
       # parsec-bin
       motrix
+
 
     # AUDIO
       easyeffects
       # pavucontrol
+
+      kdePackages.dolphin
+      kdePackages.dolphin-plugins
 
 
     # UTILITIES

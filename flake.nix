@@ -14,14 +14,17 @@
     wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
     */
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
-    stylix.url = "github:nix-community/stylix";
+    nix-flatpak.url = "github:gmodena/nix-flatpak/?ref=latest";
+
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     agenix = {
       url = "github:ryantm/agenix";

@@ -24,8 +24,8 @@
         # editconf = "sudo nvim /etc/nixos/configuration.nix";
         editflake = "sudo nvim /etc/nixos/flake.nix";
 
-        nrs = "sudo nixos-rebuild switch --flake";
-        nfu = "sudo nix flake update --flake && nrs";
+        nrs = "sudo nixos-rebuild switch";
+        nfu = "sudo nix flake update --flake /etc/nixos && nrs";
 
         # smcs = "cd ~/Games/Sync\\ Sewer; sh start.sh";
       };
