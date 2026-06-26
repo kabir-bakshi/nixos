@@ -5,8 +5,8 @@
     polarity = "dark";
     # image = ./../../Media/Wallpapers/Padmanabhaswami.png;
     image = pkgs.fetchurl {
-      url = "https://res.cloudinary.com/dmq0bize2/image/upload/v1780229904/wallhaven-k828w6_lvxqzn.jpg"; 
-      hash = "sha256-VHcdwryVnj0+OUXmrzB/OAqXkGz3rqUey1VZGKdzJh0=";
+      url = "https://res.cloudinary.com/dmq0bize2/image/upload/v1782129113/beach_xib5nw.png"; 
+      hash = "sha256-2fucnb4ZaH4I+FBNJLsUQUz+3rbXoKILpVQVUpYCb2A=";
     };
     # cursor = {
       # package = pkgs.bibata-cursors;
