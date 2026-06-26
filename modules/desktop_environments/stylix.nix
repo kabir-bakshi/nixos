@@ -17,7 +17,7 @@
     targets = {
       plymouth.enable = false;
       kmscon.enable = false;
-   };
-
+      # xfce.enable = true;
+    };
   };
 }

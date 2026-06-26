@@ -30,6 +30,11 @@
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    helium-flake = {
+      url = "github:oxcl/nix-flake-helium-browser";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs: {
@@ -61,6 +66,23 @@
           inputs.stylix.nixosModules.stylix
 
           inputs.agenix.nixosModules.default
+        ];
+      };
+
+      m60e = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        
+        specialArgs = { inherit inputs; };
+
+        modules = [
+          ./modules/extra/community_compiled_binaries.nix
+
+          ./hosts/m60e/configuration.nix
+
+          inputs.stylix.nixosModules.stylix
+          ./modules/desktop_environments/stylix.nix
+          ./modules/essentials/users_and_rules.nix
+          ./modules/essentials/enable_flakes.nix
         ];
       };
     };
