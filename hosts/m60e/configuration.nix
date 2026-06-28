@@ -45,14 +45,14 @@
   };
   services.displayManager.defaultSession = "xfce";
 
-  # Enable sound.
+  # Enable
   services.pipewire = {
     enable = true;
     pulse.enable = true;
   };
 
   nixpkgs.overlays = [ inputs.helium-flake.overlays.default ];
-
+  
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -60,6 +60,9 @@
     git
     brave
     helium
+
+    xfce4-whiskermenu-plugin
+    thunar-archive-plugin
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -84,11 +87,11 @@
   # This option defines the first version of NixOS you have installed on this particular machine,
   # and is used to maintain compatibility with application data (e.g. databases) created on older NixOS versions.
   #
-  # Most users should NEVER change this value after the initial install, for any reason,
+  # Most users should NEVER change this value after the initial install, for any re
   # even if you've upgraded your system to a new NixOS release.
   #
   # This value does NOT affect the Nixpkgs version your packages and OS are pulled from,
-  # so changing it will NOT upgrade your system - see https://nixos.org/manual/nixos/stable/#sec-upgrading for how
+  #
   # to actually do that.
   #
   # This value being lower than the current NixOS release does NOT mean your system is
