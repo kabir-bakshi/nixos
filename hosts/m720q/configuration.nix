@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ pkgs, inputs, ... }:
 {
   imports = [
     # Include the results of the hardware scan.
@@ -9,6 +9,13 @@
   networking.hostName = "m720q";
   nixpkgs.config.allowUnfree = true;
   
+  /*
+  nixpkgs.overlays = [ inputs.affinity-nix.overlays.default ];
+  environment.systemPackages = with pkgs; [
+    affinity-v3
+  ];
+  */
+
   # virtualisation.waydroid.enable = true;
 
   # This value determines the NixOS release from which the default

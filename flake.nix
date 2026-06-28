@@ -35,6 +35,8 @@
       url = "github:oxcl/nix-flake-helium-browser";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    
+    # affinity-nix.url = "github:mrshmllow/affinity-nix";
   };
 
   outputs = inputs: {

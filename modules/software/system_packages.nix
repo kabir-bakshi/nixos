@@ -8,6 +8,7 @@
       anydesk
       # parsec-bin
       motrix
+      mpv
 
 
     # AUDIO
