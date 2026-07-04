@@ -82,10 +82,10 @@
           ./hosts/m60e/configuration.nix
 
           inputs.stylix.nixosModules.stylix
-	  ./modules/essentials/ld.nix
+	        # ./modules/main/ld.nix
           ./modules/desktop_environments/stylix.nix
-          ./modules/essentials/users_and_rules.nix
-          ./modules/essentials/enable_flakes.nix
+          ./modules/main/users_and_rules.nix
+          ./modules/main/enable_flakes.nix
         ];
       };
     };

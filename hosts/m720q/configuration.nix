@@ -3,20 +3,44 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+
+    ./../../modules/main/boot_systemd.nix
+    ./../../modules/main/flatpak.nix
     ./../../modules/desktop_environments/gnome.nix
   ];
 
   networking.hostName = "m720q";
-  nixpkgs.config.allowUnfree = true;
   
-  /*
-  nixpkgs.overlays = [ inputs.affinity-nix.overlays.default ];
   environment.systemPackages = with pkgs; [
-    affinity-v3
-  ];
-  */
+    # INTERNET
+      signal-desktop
+      brave
+      rclone
+      motrix
+      mpv
 
-  # virtualisation.waydroid.enable = true;
+    # UTILITIES
+      ddcutil
+      btop
+      exiftool
+
+    # DOWNLOAD
+      qbittorrent
+
+    # GAMES & WINDOWS
+      wineWow64Packages.staging # wine-staging (version with experimental features)
+      winetricks # winetricks (all versions)
+      wineWow64Packages.waylandFull # native wayland support (unstable)
+      # parsec-bin
+      heroic
+      gamemode
+
+    # NVchad
+      neovim
+      tree-sitter
+      ripgrep
+      unzip
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
