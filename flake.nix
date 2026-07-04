@@ -77,15 +77,11 @@
         specialArgs = { inherit inputs; };
 
         modules = [
-          ./modules/extra/community_compiled_binaries.nix
+	  ./modules
 
           ./hosts/m60e/configuration.nix
 
           inputs.stylix.nixosModules.stylix
-	        # ./modules/main/ld.nix
-          ./modules/desktop_environments/stylix.nix
-          ./modules/main/users_and_rules.nix
-          ./modules/main/enable_flakes.nix
         ];
       };
     };
