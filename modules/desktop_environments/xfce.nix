@@ -11,7 +11,7 @@
 
   services.displayManager.defaultSession = "xfce";
 
-  programs.thunar.plugins = with pkgs.xfce; [
+  programs.thunar.plugins = with pkgs; [
     thunar-archive-plugin
     thunar-volman
   ];
@@ -19,4 +19,6 @@
   environment.systemPackages = with pkgs; [
     xfce4-whiskermenu-plugin
   ];
+
+  services.blueman.enable = true;
 }

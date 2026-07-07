@@ -6,12 +6,22 @@
     ./../../modules/desktop_environments/xfce.nix
   ];
 
+  boot.loader.grub.extraEntries = ''
+    menuentry 'Android-x86' --class android {
+      insmod ext2
+      set root='(hdX,Y)'
+      linux /android/kernel root=/dev/ram0 androidboot.hardware=android_x86 acpi_sleep=s3_bios,s3_mode SRC=/android
+      initrd /android/initrd.img
+    }
+  '';
+
   networking.hostName = "m60e"; # Define your hostname.
 
   nixpkgs.overlays = [ inputs.helium-flake.overlays.default ];
   environment.systemPackages = with pkgs; [
     helium
     jdk25
+    vlc
   ];
 
   # This option defines the first version of NixOS you have installed on this particular machine,

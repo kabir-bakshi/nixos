@@ -15,6 +15,12 @@
 
   };
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+
   #### NETWORKING ####
 
   networking.networkmanager.enable = true;
