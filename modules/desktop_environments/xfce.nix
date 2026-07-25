@@ -18,6 +18,10 @@
 
   environment.systemPackages = with pkgs; [
     xfce4-whiskermenu-plugin
+    pamixer # For volume control commands.
+            #   pamixer -i 5; # increase vol
+            #   pamixer -d 5; # decrease vol
+            #   pamixer -t;   # toggle mute
   ];
 
   services.blueman.enable = true;

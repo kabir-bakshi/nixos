@@ -36,11 +36,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
-    # affinity-nix.url = "github:mrshmllow/affinity-nix";
+    affinity-nix.url = "github:mrshmllow/affinity-nix";
   };
 
   outputs = inputs: {
-    # inputs.flake-parts.lib.mkFlake { inherit inputs; } ( inputs.import-tree ./modules ); # will import all modules recursively.
     nixosConfigurations = {
       m720q = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
