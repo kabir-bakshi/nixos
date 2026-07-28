@@ -1,5 +1,7 @@
 { pkgs, inputs, ... }: {
   environment.systemPackages = with pkgs; [
+      faba-mono-icons
+
     # AUDIO
       easyeffects
       # pavucontrol
@@ -30,5 +32,8 @@
     noto-fonts-color-emoji
 
     nerd-fonts.intone-mono
+
+    monocraft
+    miracode
   ];
 }

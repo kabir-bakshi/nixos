@@ -10,7 +10,7 @@
     ./main/locale.nix
     ./main/ip.nix
 
-    ./desktop_environments/stylix.nix
+    # ./desktop_environments/stylix.nix
 
     ./extra/community_compiled_binaries.nix 
   ];

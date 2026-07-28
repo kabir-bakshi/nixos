@@ -7,13 +7,14 @@
     ./../../modules/main/boot_systemd.nix
     ./../../modules/main/flatpak.nix
     # ./../../modules/desktop_environments/gnome.nix
-    ./../../modules/desktop_environments/cinnamon.nix
+    # ./../../modules/desktop_environments/cinnamon.nix
+    ./../../modules/desktop_environments/cosmic.nix
   ];
 
   networking.hostName = "m720q";
 
-  nixpkgs.overlays = [ inputs.affinity-nix.overlays.default ];
-  
+  # nixpkgs.overlays = [ inputs.affinity-nix.overlays.default ];
+
   environment.systemPackages = with pkgs; [
     kdePackages.plasma-bigscreen
 
