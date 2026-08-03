@@ -4,7 +4,7 @@
       isNormalUser = true;
       description = "Kabir Bakshi";
       group = "wheel";
-      extraGroups = [ "wheel" "networkmanager" ]; # i2c for baclight control
+      extraGroups = [ "wheel" "networkmanager" "input" ]; # i2c for baclight control
     };
     /*
     krishna = {

@@ -8,7 +8,8 @@
     ./../../modules/main/flatpak.nix
     # ./../../modules/desktop_environments/gnome.nix
     # ./../../modules/desktop_environments/cinnamon.nix
-    ./../../modules/desktop_environments/cosmic.nix
+    # ./../../modules/desktop_environments/cosmic.nix
+    ./../../modules/desktop_environments/niri.nix
   ];
 
   networking.hostName = "m720q";
@@ -16,17 +17,13 @@
   # nixpkgs.overlays = [ inputs.affinity-nix.overlays.default ];
 
   environment.systemPackages = with pkgs; [
-    kdePackages.plasma-bigscreen
-
     # INTERNET
-      signal-desktop
       brave
       rclone
       motrix
       mpv
       
       # affinity-v3
-      onlyoffice-desktopeditors
 
     # UTILITIES
       ddcutil
@@ -40,7 +37,6 @@
       wineWow64Packages.staging # wine-staging (version with experimental features)
       winetricks # winetricks (all versions)
       wineWow64Packages.waylandFull # native wayland support (unstable)
-      # parsec-bin
       heroic
       gamemode
 
