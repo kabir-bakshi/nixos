@@ -33,7 +33,6 @@
 
     nerd-fonts.intone-mono
 
-    monocraft
-    miracode
+    montserrat
   ];
 }

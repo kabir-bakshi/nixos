@@ -12,7 +12,7 @@
       # package = pkgs.bibata-cursors;
       # name = "Bibata-Modern-Amber";
     # };
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml"; # or rose-pine, chalk, da-one-ocean
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/vesper.yaml"; # or rose-pine, chalk, da-one-ocean
 
     targets = {
       plymouth.enable = false;

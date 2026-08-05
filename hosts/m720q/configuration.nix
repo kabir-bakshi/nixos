@@ -23,6 +23,7 @@
       motrix
       mpv
       
+      mediawriter
       # affinity-v3
 
     # UTILITIES
