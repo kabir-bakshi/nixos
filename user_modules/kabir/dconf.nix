@@ -8,7 +8,7 @@ with lib.hm.gvariant;
     "org/gnome/desktop/interface" = {
       clock-format = "12h";
       color-scheme = "prefer-dark";
-      cursor-theme = "Bibata-Modern-Classic";
+      # cursor-theme = "Bibata-Modern-Classic";
       document-font-name = lib.mkForce "Noto Sans 12";
       font-name = lib.mkForce "Adwaita Sans 12";
       gtk-theme = "adw-gtk3";

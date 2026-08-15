@@ -4,6 +4,30 @@
 
   home.username = "kabir";
   home.homeDirectory = "/home/kabir";
+  
+
+  /* 
+  home.pointerCursor = {
+    enable = true;
+    name = "GoogleDot-Blue"; # The exact name of the theme folder inside the package
+    package = pkgs.hello;
+    size = 24;
+    
+    # Automatically apply to GTK (writes to dconf/gsettings)
+    gtk.enable = true;
+    
+    # Uncomment if using X11 instead of Wayland
+    # x11.enable = true;
+  };
+
+  # Ensure GTK configuration is enabled if you set gtk.enable = true above
+  gtk.enable = true;
+
+  home.sessionVariables = {
+    XCURSOR_THEME = "GoogleDot-Blue";
+    XCURSOR_SIZE = "24";
+  };
+  */
 
   programs = {
     bash = {

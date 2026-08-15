@@ -10,13 +10,18 @@
     # ./../../modules/desktop_environments/cinnamon.nix
     # ./../../modules/desktop_environments/cosmic.nix
     ./../../modules/desktop_environments/niri.nix
+
+    ./../../modules/extra/waydroid.nix
   ];
 
   networking.hostName = "m720q";
 
   # nixpkgs.overlays = [ inputs.affinity-nix.overlays.default ];
 
+
   environment.systemPackages = with pkgs; [
+      gcc
+      
     # INTERNET
       brave
       rclone
