@@ -11,7 +11,7 @@
     # ./../../modules/desktop_environments/cosmic.nix
     ./../../modules/desktop_environments/niri.nix
 
-    ./../../modules/extra/waydroid.nix
+    # ./../../modules/extra/waydroid.nix
   ];
 
   networking.hostName = "m720q";
@@ -20,6 +20,7 @@
 
 
   environment.systemPackages = with pkgs; [
+      ppsspp
       gcc
       
     # INTERNET

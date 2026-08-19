@@ -16,6 +16,8 @@
 
     "org.vinegarhq.Sober"
 
+    # "net.rpcs3.RPCS3"
+
     ## "dev.lizardbyte.app.Sunshine"
 
   ];
