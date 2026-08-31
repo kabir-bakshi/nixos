@@ -6,6 +6,8 @@
 
     ./../../modules/main/boot_systemd.nix
     ./../../modules/main/flatpak.nix
+    ./../../modules/main/time.nix
+    ./../../modules/main/sunshine.nix
     # ./../../modules/desktop_environments/gnome.nix
     # ./../../modules/desktop_environments/cinnamon.nix
     # ./../../modules/desktop_environments/cosmic.nix
@@ -20,7 +22,7 @@
 
 
   environment.systemPackages = with pkgs; [
-      ppsspp
+      godot
       gcc
       
     # INTERNET

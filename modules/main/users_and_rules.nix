@@ -4,7 +4,7 @@
       isNormalUser = true;
       description = "Kabir Bakshi";
       group = "wheel";
-      extraGroups = [ "wheel" "networkmanager" "input" ];
+      extraGroups = [ "wheel" "networkmanager" "input" "uinput" ]; # uinput is for sunshine
     };
     /*
     krishna = {
