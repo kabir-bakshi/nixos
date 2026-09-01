@@ -22,6 +22,8 @@
 
 
   environment.systemPackages = with pkgs; [
+      stow
+
       godot
       gcc
       
