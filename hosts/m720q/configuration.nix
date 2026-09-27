@@ -22,6 +22,7 @@
 
 
   environment.systemPackages = with pkgs; [
+      onlyoffice-desktopeditors
       stow
 
       godot

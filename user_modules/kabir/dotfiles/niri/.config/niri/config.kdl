@@ -20,6 +20,14 @@ cursor {
   xcursor-size 30 
 }
 
+output "HDMI-A-2" {
+  mode "1920x1080@100.000"
+}
+/-output "HDMI-A-2" {
+  mode "800x600@75.000"
+}
+
+
 layout {
   gaps 0
   center-focused-column "always"
@@ -87,6 +95,7 @@ binds {
 
     Alt+Period allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.04+ -l 1.0"; }
     Alt+Comma allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.04-"; }
+    Alt+Slash allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
 
     XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
     XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }

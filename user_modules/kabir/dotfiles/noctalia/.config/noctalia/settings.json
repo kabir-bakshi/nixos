@@ -19,7 +19,6 @@
         "overviewLayer": false,
         "pinnedApps": [
             "gparted",
-            "org.gnome.Nautilus",
             "com.github.wwmm.easyeffects",
             "org.fedoraproject.MediaWriter",
             "brave-browser",
@@ -28,7 +27,8 @@
             "net.rpcs3.RPCS3",
             "ppsspp",
             "com.heroicgameslauncher.hgl",
-            "org.godotengine.Godot4.7"
+            "org.godotengine.Godot4.7",
+            "org.gnome.Nautilus"
         ],
         "position": "center",
         "screenshotAnnotationTool": "",
@@ -341,7 +341,7 @@
                 "name": "HDMI-A-2",
                 "widgets": [
                     {
-                        "colorName": "none",
+                        "colorName": "primary",
                         "height": 130,
                         "hideWhenIdle": true,
                         "id": "AudioVisualizer",
@@ -779,8 +779,8 @@
         ],
         "useOriginalImages": false,
         "useSolidColor": false,
-        "useWallhaven": false,
-        "viewMode": "recursive",
+        "useWallhaven": true,
+        "viewMode": "browse",
         "wallhavenApiKey": "YzNuyO79JXxFSBb3G96Y4Xr4FBZ3WJcR",
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
@@ -790,7 +790,7 @@
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",
         "wallhavenResolutionWidth": "",
-        "wallhavenSorting": "relevance",
+        "wallhavenSorting": "toplist",
         "wallpaperChangeMode": "random"
     }
 }
