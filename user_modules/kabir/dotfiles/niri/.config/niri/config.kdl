@@ -22,6 +22,7 @@ cursor {
 
 output "HDMI-A-2" {
   mode "1920x1080@100.000"
+  // transform "90"
 }
 /-output "HDMI-A-2" {
   mode "800x600@75.000"
@@ -49,7 +50,8 @@ layout {
 }
 
 
-spawn-at-startup "noctalia-shell"
+// spawn-at-startup "noctalia-shell"
+spawn-at-startup "dms run"
 
 hotkey-overlay {
     // skip-at-startup
@@ -250,3 +252,8 @@ binds {
 
 include "./noctalia.kdl"
 
+
+// DMS Include Configs
+include "dms/layout.kdl"
+include "dms/windowrules.kdl"
+include "dms/cursor.kdl"

@@ -44,7 +44,7 @@
         "preferredPlayer": "",
         "spectrumFrameRate": 100,
         "spectrumMirrored": true,
-        "visualizerType": "linear",
+        "visualizerType": "mirrored",
         "volumeFeedback": false,
         "volumeFeedbackSoundFile": "",
         "volumeOverdrive": false,
@@ -57,11 +57,11 @@
         "barType": "simple",
         "capsuleColorKey": "none",
         "capsuleOpacity": 1,
-        "contentPadding": 2,
+        "contentPadding": 0,
         "density": "default",
         "displayMode": "always_visible",
         "enableExclusionZoneInset": true,
-        "fontScale": 1.5,
+        "fontScale": 1.3,
         "frameRadius": 12,
         "frameThickness": 8,
         "hideOnOverview": false,
@@ -164,6 +164,18 @@
                     "textColor": "none",
                     "useMonospaceFont": true,
                     "usePadding": false
+                },
+                {
+                    "displayMode": "alwaysShow",
+                    "iconColor": "none",
+                    "id": "Network",
+                    "textColor": "none"
+                },
+                {
+                    "displayMode": "alwaysShow",
+                    "iconColor": "none",
+                    "id": "Bluetooth",
+                    "textColor": "none"
                 }
             ],
             "right": [
@@ -227,13 +239,13 @@
                 },
                 {
                     "colorizeDistroLogo": false,
-                    "colorizeSystemIcon": "none",
+                    "colorizeSystemIcon": "primary",
                     "colorizeSystemText": "none",
                     "customIconPath": "",
-                    "enableColorization": false,
+                    "enableColorization": true,
                     "icon": "noctalia",
                     "id": "ControlCenter",
-                    "useDistroLogo": false
+                    "useDistroLogo": true
                 }
             ]
         }
@@ -365,14 +377,14 @@
                         "hideMode": "hidden",
                         "id": "MediaPlayer",
                         "roundedCorners": true,
-                        "scale": 1.3959613832253737,
+                        "scale": 1.2828242982355262,
                         "showAlbumArt": true,
                         "showBackground": true,
                         "showButtons": true,
-                        "showVisualizer": true,
+                        "showVisualizer": false,
                         "visualizerType": "linear",
-                        "x": 1340,
-                        "y": 20
+                        "x": 700,
+                        "y": 920
                     },
                     {
                         "clockColor": "none",
@@ -381,10 +393,10 @@
                         "format": "hh:mm AP\\nddd, dd MMM",
                         "id": "Clock",
                         "roundedCorners": true,
-                        "scale": 5,
+                        "scale": 4.015722091979601,
                         "showBackground": false,
                         "useCustomFont": true,
-                        "x": 0,
+                        "x": 700,
                         "y": -20
                     }
                 ]
@@ -538,7 +550,7 @@
         "weatherTaliaMascotAlways": false
     },
     "network": {
-        "bluetoothAutoConnect": false,
+        "bluetoothAutoConnect": true,
         "bluetoothDetailsViewMode": "grid",
         "bluetoothHideUnnamedDevices": false,
         "bluetoothRssiPollIntervalMs": 60000,
@@ -779,7 +791,7 @@
         ],
         "useOriginalImages": false,
         "useSolidColor": false,
-        "useWallhaven": true,
+        "useWallhaven": false,
         "viewMode": "browse",
         "wallhavenApiKey": "YzNuyO79JXxFSBb3G96Y4Xr4FBZ3WJcR",
         "wallhavenCategories": "111",

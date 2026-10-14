@@ -2,7 +2,6 @@
   programs.niri.enable = true;
   services.displayManager.ly.enable = true;
 
-
   # For apps that require authentication
   security.polkit.enable = true; # Security Guard
   services.gnome.gnome-keyring.enable = true; # secret service
@@ -21,6 +20,23 @@
       };
     };
 
+  programs.dms-shell = {
+    enable = true;
+
+    systemd = {
+      enable = true;             # Systemd service for auto-start
+      restartIfChanged = true;   # Auto-restart dms.service when dms-shell changes
+    };
+    
+    /*
+    # Core features
+    enableSystemMonitoring = true;     # System monitoring widgets (dgop)
+    # enableVPN = true;                  # VPN management widget
+    enableDynamicTheming = true;       # Wallpaper-based theming (matugen)
+    enableAudioWavelength = true;      # Audio visualizer (cava)
+    enableCalendarEvents = true;       # Calendar integration (khal)
+    */
+  };
 
   security.wrappers.pkexec.enable = lib.mkForce true;
 
@@ -30,13 +46,16 @@
   systemd.user.services.niri.enableDefaultPath = false;
 
   environment.systemPackages = with pkgs; [
-    noctalia-shell
+    # noctalia-shell
+    
+    # quickshell
+    # dms-shell
 
     xwayland-satellite # Highly Recommended, xwayland support
 
     polkit_gnome
 
-    morewaita-icon-theme
+    # morewaita-icon-theme
 
     nautilus
     alacritty

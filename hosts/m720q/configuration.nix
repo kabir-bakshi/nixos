@@ -20,9 +20,9 @@
 
   # nixpkgs.overlays = [ inputs.affinity-nix.overlays.default ];
 
-
   environment.systemPackages = with pkgs; [
       onlyoffice-desktopeditors
+      # gpm
       stow
 
       godot
