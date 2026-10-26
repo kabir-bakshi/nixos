@@ -5,11 +5,11 @@
 
 layout {
     border {
-        width 2
+        width 1
     }
 
     focus-ring {
-        width 2
+        width 1
     }
 }
 

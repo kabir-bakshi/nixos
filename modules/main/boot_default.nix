@@ -3,11 +3,14 @@
   boot = {
     consoleLogLevel = 3; # Silence first boot output
 
-    initrd.systemd.enable = true;
+    # initrd.systemd.enable = true;
+    loader.systemd-boot.enable = true;
 
+    /*
     initrd = {
       verbose = false;
     };
+    */
     
     kernelParams = [
       "quiet"

@@ -21,6 +21,7 @@
   # nixpkgs.overlays = [ inputs.affinity-nix.overlays.default ];
 
   environment.systemPackages = with pkgs; [
+      cmake
       onlyoffice-desktopeditors
       # gpm
       stow
