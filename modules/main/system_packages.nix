@@ -22,6 +22,9 @@
 
     # Cosmetic
       bibata-cursors
+    
+    # Screen Recording
+      wf-recorder
 
 
   ];

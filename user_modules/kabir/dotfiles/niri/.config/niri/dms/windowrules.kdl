@@ -19,6 +19,12 @@ window-rule {
     open-focused true
 }
 
+// @id=wr_1793508862994925091 @name=Alacritty
+window-rule {
+    match app-id="^Alacritty$"
+    default-column-width { proportion 0.7; }
+}
+
 // @id=dms-window-opaque @name=DMS Window Opaque
 window-rule {
     match app-id="^(dev\\.duxlabs\\.shell|com\\.danklinux\\.dms)$"

@@ -25,7 +25,8 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    
+    /*
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -36,7 +37,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
-    # affinity-nix.url = "github:mrshmllow/affinity-nix";
+    affinity-nix.url = "github:mrshmllow/affinity-nix";
+    */
   };
 
   outputs = inputs: {
@@ -66,7 +68,7 @@
 
           inputs.stylix.nixosModules.stylix
 
-          inputs.agenix.nixosModules.default
+          # inputs.agenix.nixosModules.default
         ];
       };
 
