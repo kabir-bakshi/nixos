@@ -1,6 +1,13 @@
 { config, pkgs, lib, ... }: {
   programs.niri.enable = true;
-  services.displayManager.ly.enable = true;
+  # services.displayManager.ly.enable = true;
+  
+  programs.dms-greeter = {
+    enable = true;
+    compositor.name = "niri"; # or hyprland, sway, labwc, mango, scroll, miracle, aqueous
+    configHome = "/home/kabir"; # copies that user's DMS settings (and wallpaper) into the greeter data directory before greetd starts
+  };
+
 
   # For apps that require authentication
   security.polkit.enable = true; # Security Guard

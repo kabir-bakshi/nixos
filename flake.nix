@@ -1,5 +1,5 @@
 {
-  description = "Flake for locking package versions for Kabir";
+  description = "Flake for locking package versions.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -23,6 +23,11 @@
 
     stylix = {
       url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    dank-greeter = {
+      url = "github:duxlabs-dev/dux-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     
@@ -50,10 +55,10 @@
         
         modules = [
           ./modules # will import default modules
-
           ./hosts/m720q/configuration.nix
           
           inputs.nix-flatpak.nixosModules.nix-flatpak
+          inputs.dank-greeter.nixosModules.default
           
           inputs.home-manager.nixosModules.home-manager {
             home-manager = {
@@ -67,19 +72,16 @@
           }
 
           inputs.stylix.nixosModules.stylix
-
           # inputs.agenix.nixosModules.default
         ];
       };
 
       m60e = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        
         specialArgs = { inherit inputs; };
 
         modules = [
-	  ./modules
-
+	        ./modules
           ./hosts/m60e/configuration.nix
 
           inputs.stylix.nixosModules.stylix

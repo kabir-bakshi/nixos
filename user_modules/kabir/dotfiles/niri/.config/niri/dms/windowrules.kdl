@@ -7,18 +7,6 @@ window-rule {
     open-floating true
 }
 
-// @id=wr_1791128799351618896 @name=brave-browser
-window-rule {
-    match app-id="^brave-browser$" is-floating=true
-}
-
-// @id=wr_1791128833240346544 @name=brave-browser
-window-rule {
-    match app-id="^brave-browser$"
-    open-floating true
-    open-focused true
-}
-
 // @id=wr_1793508862994925091 @name=Alacritty
 window-rule {
     match app-id="^Alacritty$"
