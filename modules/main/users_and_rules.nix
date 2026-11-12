@@ -3,7 +3,7 @@
     kabir = {
       isNormalUser = true;
       description = "Kabir Bakshi";
-      group = "wheel";
+      group = "users";
       extraGroups = [ "wheel" "networkmanager" "input" "uinput" ]; # uinput is for sunshine
     };
     /*

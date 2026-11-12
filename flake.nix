@@ -50,7 +50,6 @@
     nixosConfigurations = {
       m720q = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-
         specialArgs = { inherit inputs; };
         
         modules = [
@@ -76,12 +75,38 @@
         ];
       };
 
+      latitude-5511 = inputs.nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+
+        modules = [
+	  ./modules
+          ./hosts/latitude-5511/configuration.nix
+          
+          inputs.nix-flatpak.nixosModules.nix-flatpak
+          inputs.dank-greeter.nixosModules.default
+	  
+
+	  inputs.home-manager.nixosModules.home-manager {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "nix_backup";
+              
+              users.kabir = ./user_modules/kabir/home.nix;
+            };
+          }
+
+          inputs.stylix.nixosModules.stylix
+        ];
+      };
+
       m60e = inputs.nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
 
         modules = [
-	        ./modules
+          ./modules
           ./hosts/m60e/configuration.nix
 
           inputs.stylix.nixosModules.stylix

@@ -7,7 +7,9 @@
     compositor.name = "niri"; # or hyprland, sway, labwc, mango, scroll, miracle, aqueous
     configHome = "/home/kabir"; # copies that user's DMS settings (and wallpaper) into the greeter data directory before greetd starts
   };
-
+  
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
 
   # For apps that require authentication
   security.polkit.enable = true; # Security Guard
