@@ -30,7 +30,12 @@
       url = "github:duxlabs-dev/dux-greeter";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    
+
+    dux-files = {
+      url = "github:duxlabs-dev/dux-files";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     /*
     agenix = {
       url = "github:ryantm/agenix";
@@ -85,6 +90,7 @@
           
           inputs.nix-flatpak.nixosModules.nix-flatpak
           inputs.dank-greeter.nixosModules.default
+	  # inputs.dux-files.nixosModules.dux-files
 	  
 
 	  inputs.home-manager.nixosModules.home-manager {

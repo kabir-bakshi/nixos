@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, inputs, ... }: {
   programs.niri.enable = true;
   # services.displayManager.ly.enable = true;
   
@@ -8,6 +8,7 @@
     configHome = "/home/kabir"; # copies that user's DMS settings (and wallpaper) into the greeter data directory before greetd starts
   };
   
+  # For battery
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
 
@@ -36,18 +37,12 @@
       enable = true;             # Systemd service for auto-start
       restartIfChanged = true;   # Auto-restart dms.service when dms-shell changes
     };
-    
-    /*
-    # Core features
-    enableSystemMonitoring = true;     # System monitoring widgets (dgop)
-    # enableVPN = true;                  # VPN management widget
-    enableDynamicTheming = true;       # Wallpaper-based theming (matugen)
-    enableAudioWavelength = true;      # Audio visualizer (cava)
-    enableCalendarEvents = true;       # Calendar integration (khal)
-    */
   };
 
   security.wrappers.pkexec.enable = lib.mkForce true;
+
+  programs.dux-files.enable = true;
+  programs.dux-files.systemd.enable = true;
 
   # NixOS otherwise injects a stripped PATH via Environment= on the niri.service
   # unit which shadows the imported user-manager PATH. Disabling the default
@@ -55,20 +50,11 @@
   systemd.user.services.niri.enableDefaultPath = false;
 
   environment.systemPackages = with pkgs; [
-    # noctalia-shell
-    
-    # quickshell
-    # dms-shell
-
     xwayland-satellite # Highly Recommended, xwayland support
-
     polkit_gnome
-
-    # morewaita-icon-theme
-
-    nautilus
-    alacritty
+    brightnessctl
 
     eog
+    alacritty
   ];
 }

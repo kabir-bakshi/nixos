@@ -40,12 +40,10 @@
       # qbittorrent
 
     # GAMES & WINDOWS
-      /*
       wineWow64Packages.staging # wine-staging (version with experimental features)
       winetricks # winetricks (all versions)
       wineWow64Packages.waylandFull # native wayland support (unstable)
       heroic
-      */
       gamemode
 
     # NVchad
