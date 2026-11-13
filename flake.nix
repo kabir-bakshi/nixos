@@ -4,16 +4,6 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     
-    /*
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-    import-tree.url = "github:vic/import-tree";
-
-    wrapper-modules.url = "github:BirdeeHub/nix-wrapper-modules";
-    */
-
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,20 +25,6 @@
       url = "github:duxlabs-dev/dux-files";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    /*
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    helium-flake = {
-      url = "github:oxcl/nix-flake-helium-browser";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    
-    affinity-nix.url = "github:mrshmllow/affinity-nix";
-    */
   };
 
   outputs = inputs: {
@@ -71,12 +47,10 @@
               backupFileExtension = "nix_backup";
               
               users.kabir = ./user_modules/kabir/home.nix;
-              # users.krishna = ./user_modules/krishna/home.nix;
             };
           }
 
           inputs.stylix.nixosModules.stylix
-          # inputs.agenix.nixosModules.default
         ];
       };
 
@@ -90,8 +64,6 @@
           
           inputs.nix-flatpak.nixosModules.nix-flatpak
           inputs.dank-greeter.nixosModules.default
-	  # inputs.dux-files.nixosModules.dux-files
-	  
 
 	  inputs.home-manager.nixosModules.home-manager {
             home-manager = {
